@@ -1,34 +1,8 @@
+package Data_Structure.Tree;
+
 import java.util.Objects;
 
-public class BinarySearchTree {
-    public static void main(String[] args) {
-
-        Tree<Integer> tree = new Tree<>();
-        
-        //Head
-        tree.addValue(20);
-        //Left_Side
-        tree.addValue(14);
-        tree.addValue(12);
-        tree.addValue(16);
-        tree.addValue(13);
-        tree.addValue(15);
-        tree.addValue(11);
-        tree.addValue(17);
-        //Right_Side
-        tree.addValue(26);
-        tree.addValue(24);
-        tree.addValue(28);
-        tree.addValue(23);
-        tree.addValue(25);
-        tree.addValue(27);
-        tree.addValue(29);
-
-        System.out.println(" Contains: " + ((tree.contains(25)) ? "Yes":"No"));
-    }
-}
-
-class Tree<T extends Comparable<T>> {
+public class BinarySearchTree<T extends Comparable<T>> {
     
     protected class Node {
         private Node leftNode;
@@ -109,4 +83,3 @@ class Tree<T extends Comparable<T>> {
         return nodeHead;
     }
 }
-
