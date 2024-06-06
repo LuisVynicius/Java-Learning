@@ -59,13 +59,42 @@ public class LinkedList<T>{
         return true;
     }
 
-    public T get(int index) {
+    public Node get(int index) {
         Node current = firstNode;
         for (int i = 0; i < index; i++) {
             if (Objects.nonNull(current.getNextNode())) {
                 current = current.getNextNode();
             }
         }
-        return current.getValue();
+        return current;
+    }
+
+    public void remove(int index) {
+        
+        if (index < 0 || index >= lenght) {
+            throw new IndexOutOfBoundsException("Erro");
+        }
+        
+        Node prevNode = get(index-1);
+        Node currentNode = prevNode.getNextNode();
+
+        if (index == 0) {
+            if (lenght > 1) {
+                firstNode = firstNode.getNextNode();
+            } else {
+                prevNode.setNextNode(null);
+                firstNode = null;
+                lastNode = null;
+            }
+            lenght--;
+            return;
+        }
+
+        prevNode.setNextNode(currentNode.getNextNode());
+
+        if (Objects.isNull(prevNode.getNextNode())) {
+            lastNode = prevNode;
+        }
+        lenght--;
     }
 }
