@@ -1,4 +1,4 @@
-package Database.jdbc.src.main.java.com.mevy;
+package com.mevy;
 
 public class DatabaseException extends RuntimeException {
 

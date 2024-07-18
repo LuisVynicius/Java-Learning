@@ -1,4 +1,4 @@
-package Database.jdbc.src.main.java.com.mevy;
+package com.mevy;
 
 import java.sql.Connection;
 
@@ -13,7 +13,6 @@ public class Main {
             System.out.println("User: " + userService.findById(3));
 
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("Erro: " + e);
         }
     }

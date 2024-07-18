@@ -38,6 +38,7 @@ public class Main {
         //PhantomReference
         Person person3 = new Person("User03", "Password03");
         ReferenceQueue<Person> rq2 = new ReferenceQueue<>();
+        @SuppressWarnings("unused")
         PhantomReference<Person> pr = new PhantomReference<>(person3, rq2);
 
         person3 = null;
